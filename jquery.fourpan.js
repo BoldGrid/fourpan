@@ -179,7 +179,11 @@
 				$close_button.hide();
 			}
 
-			var bounding_rect = $this[0].getBoundingClientRect();
+			var bounding_rect = {
+				top: $this[0].offsetTop,
+				left: $this[0].offsetLeft
+			};
+
 			panels[settings.id_prefix + '-top'].stop().animate({
 				'height':Math.max( bounding_rect.top - padding, 0 )
 			}, speed );
